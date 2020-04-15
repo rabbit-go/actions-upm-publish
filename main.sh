@@ -12,7 +12,11 @@ $(echo "${INPUT_RELEASE_BODY}" | sed 's/^#/\#\#/')
 EOS
 cat package.json | jq -Mr '. | .version = "'"${INPUT_RELEASE_VERSION##v}"'"' > /tmp/package.json
 mv /tmp/package.json package.json
-echo $(cat .npmrc | grep '^registry=' | sed 's/^registry=https://')'/:_authToken="'${INPUT_NPM_AUTH_TOKEN}'"' >> ~/.npmrc
+
+npm login 
+${INPUT_LOGIN_NAME}
+${INPUT_LOGIN_PASSWORD}
+github-actions@example.com
 npm publish 
 
 git config --global user.email "github-actions@example.com"
