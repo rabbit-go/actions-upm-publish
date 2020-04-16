@@ -15,7 +15,7 @@ mv /tmp/package.json package.json
 
 npm-cli-adduser -u $INPUT_NPM_USER -p $INPUT_NPM_PASS -e github-actions@example.com -r $INPUT_NPM_URL
 
-npm publish 
+npm publish --registry $INPUT_NPM_URL
 
 git config --global user.email "github-actions@example.com"
 git config --global user.name "GitHub Actions"
