@@ -13,11 +13,8 @@ EOS
 cat package.json | jq -Mr '. | .version = "'"${INPUT_RELEASE_VERSION##v}"'"' > /tmp/package.json
 mv /tmp/package.json package.json
 
-npm adduser <<!
-$INPUT_NPM_USER
-$INPUT_NPM_PASS
-github-actions@example.com
-!
+npm-cli-adduser -u $INPUT_NPM_USER -p $INPUT_NPM_PASS -e github-actions@example.com -r $INPUT_NPM_URL
+
 npm publish 
 
 git config --global user.email "github-actions@example.com"
