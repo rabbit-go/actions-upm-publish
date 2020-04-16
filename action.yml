@@ -35,6 +35,15 @@ inputs:
   npm_auth_token:
     description: 'Auth token for UPM Registry'
     required: true
+  npm_user:
+    description: 'npm_user'
+    required: true
+  npm_pass:
+    description: 'npm_pass'
+    required: true
+  npm_email:
+    description: 'npm_email'
+    required: 
 runs:
   using: 'Docker'
   image: 'Dockerfile'
