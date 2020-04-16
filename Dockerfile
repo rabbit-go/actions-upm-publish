@@ -1,6 +1,6 @@
 FROM alpine:3.9
 
-RUN apk update && apk add bash git npm jq nodejs
+RUN apk update && apk add bash git npm jq nodejs curl
 
 RUN touch ~/.bashrc \
       && curl -o- -L https://yarnpkg.com/install.sh | bash \
