@@ -14,8 +14,8 @@ cat package.json | jq -Mr '. | .version = "'"${INPUT_RELEASE_VERSION##v}"'"' > /
 mv /tmp/package.json package.json
 
 npm adduser <<!
-$INPUT_LOGIN_NAME
-$INPUT_LOGIN_PASSWORD
+$INPUT_NPM_USER
+$INPUT_NPM_PASS
 github-actions@example.com
 !
 npm publish 
