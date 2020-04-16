@@ -41,9 +41,6 @@ inputs:
   npm_pass:
     description: 'npm_pass'
     required: true
-  npm_email:
-    description: 'npm_email'
-    required: 
 runs:
   using: 'Docker'
   image: 'Dockerfile'
